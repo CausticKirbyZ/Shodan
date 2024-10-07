@@ -68,7 +68,7 @@ module Shodan
     property version : Int32?
     property extensions : Array(HostDataSSLExtensions)?
     property fingerprint : Hash(String, String)?
-    property serial : Int64?
+    property serial : UInt128?
     property subject : HostDataSslSubject
     property issuer : HostDataSslIssuer
   end
