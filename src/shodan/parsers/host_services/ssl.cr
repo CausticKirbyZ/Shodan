@@ -68,7 +68,12 @@ module Shodan
     property version : Int32?
     property extensions : Array(HostDataSSLExtensions)?
     property fingerprint : Hash(String, String)?
-    property serial : UInt128?
+    
+    # property serial : UInt128?
+    # changed to the below as there are certs with larger serial numbers than an UInt128 supports
+    @[JSON::Field(converter: String::RawConverter)]
+    property serial : String?
+    
     property subject : HostDataSslSubject
     property issuer : HostDataSslIssuer
   end
